@@ -22,7 +22,7 @@ function App () {
       content={
         <BrowserRouter>
         <Routes>
-          <Route exact path="/" element={<Overview/>}/>
+          <Route exact path="/Overview" element={<Overview/>}/>
           <Route exact path="/Staff" element={<Staff/>}/>
           <Route exact path="/OrderHistory" element={<OrderHistory/>} />
           <Route exact path="/Inventory" element={<Inventory/>}/>
