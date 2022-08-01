@@ -1,4 +1,4 @@
-from flask import Flask, request
+from flask import Flask, request, send_from_directory
 from flask_sqlalchemy import SQLAlchemy
 from flask_cors import CORS, cross_origin
 from sqlalchemy import select
@@ -178,7 +178,9 @@ def getStoreInventory():
         StoreInventory_list.append((StoreInventory.sto_id, StoreInventory.f_id, StoreInventory.si_quantity, StoreInventory.si_sell_price))
     return StoreInventory_list
 
-
+@app.route('/')
+def serve():
+    return send_from_directory(app.static_folder, 'index.html')
 ##### CREATE 
 
 @app.route("/createStore", methods=['POST'])
