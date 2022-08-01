@@ -1,14 +1,16 @@
 from flask import Flask, request
 from flask_sqlalchemy import SQLAlchemy
-from flask_cors import CORS
+from flask_cors import CORS, cross_origin
 from sqlalchemy import select
 from sqlalchemy import exc
 import json
 from dotenv import load_dotenv
 import os
 load_dotenv()
-app = Flask(__name__)
-CORS(app, supports_credentials=True)
+app = Flask(__name__ 
+    ,static_folder='client/build',static_url_path='')
+cors = CORS(app)
+#CORS(app, supports_credentials=True)
 app.config['SQLALCHEMY_DATABASE_URI'] = os.environ.get('SQLALCHEMY_DATABASE_URI')
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = os.environ.get('SQLALCHEMY_TRACK_MODIFICATIONS')
 app.config['SECRET_KEY'] = os.environ.get('SECRET_KEY')
