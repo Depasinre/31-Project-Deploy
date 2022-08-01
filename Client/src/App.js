@@ -22,11 +22,11 @@ function App () {
       content={
         <BrowserRouter>
         <Routes>
-          <Route exact path="/Overview" element={<Overview/>}/>
-          <Route exact path="/Staff" element={<Staff/>}/>
-          <Route exact path="/OrderHistory" element={<OrderHistory/>} />
-          <Route exact path="/Inventory" element={<Inventory/>}/>
-          <Route exact path="/Customer" element={<Customer/>}/>
+          <Route path="/Overview" element={<Overview/>}/>
+          <Route path="/Staff" element={<Staff/>}/>
+          <Route path="/OrderHistory" element={<OrderHistory/>} />
+          <Route path="/Inventory" element={<Inventory/>}/>
+          <Route path="/Customer" element={<Customer/>}/>
         </Routes>
         </BrowserRouter>
       }
